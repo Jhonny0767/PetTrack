@@ -1,0 +1,1002 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image:
+        linear-gradient(rgba(240, 249, 255, 0.9), rgba(224, 242, 254, 0.95)),
+        url(../images/logo4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+/* ============================================
+   HEADER SUPERIOR
+   ============================================ */
+.crud-header {
+    background: linear-gradient(135deg, #103458 0%, #1e4d7b 100%);
+    color: #ffffff;
+    padding: 20px 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+.crud-header h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   TARJETAS
+   ============================================ */
+.caja-busqueda,
+.caja-resultados {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 6px 25px rgba(16, 52, 88, 0.08);
+    border: 1px solid #e1e8f0;
+    height: fit-content;
+}
+
+.caja-busqueda h4,
+.caja-resultados h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #103458;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #e1e8f0;
+}
+
+/* ============================================
+   FORMULARIO DE BÚSQUEDA
+   ============================================ */
+.caja-busqueda .form-control {
+    padding: 11px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.caja-busqueda .form-control:focus {
+    border-color: #46A2FD;
+    box-shadow: 0 0 0 4px rgba(70, 162, 253, 0.15);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    border: none;
+    transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    font-family: inherit;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #46A2FD 0%, #2f8ee8 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(70, 162, 253, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 14px rgba(70, 162, 253, 0.5);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: #64748b;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 5px 14px rgba(239, 68, 68, 0.5);
+    color: #ffffff;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+    box-shadow: 0 5px 14px rgba(16, 185, 129, 0.5);
+    color: #ffffff;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+}
+
+.btn-warning:hover {
+    box-shadow: 0 5px 14px rgba(245, 158, 11, 0.5);
+    color: #ffffff;
+}
+
+/* Botones pequeños de la tabla */
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+}
+
+/* ============================================
+   TABLA
+   ============================================ */
+#tabla_registros {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 5px;
+}
+
+#tabla_registros thead th {
+    background: #f0f9ff;
+    color: #103458;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #e1e8f0;
+}
+
+#tabla_registros tbody td {
+    padding: 12px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+#tabla_registros tbody tr {
+    transition: background 0.15s;
+}
+
+#tabla_registros tbody tr:hover {
+    background: #f8fafc;
+}
+
+#tabla_registros tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================
+   UTILIDADES BOOTSTRAP
+   ============================================ */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 25px 40px;
+}
+
+.col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+}
+
+.col-md-8 {
+    flex: 0 0 calc(66.666% - 20px);
+    max-width: calc(66.666% - 20px);
+}
+
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+.w-100 { width: 100%; }
+.text-center { text-align: center; }
+.table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(248, 250, 252, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .col-md-4,
+    .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .crud-header h2 {
+        font-size: 1.3rem;
+    }
+
+    #tabla_registros {
+        font-size: 0.85rem;
+    }
+
+    #tabla_registros thead th,
+    #tabla_registros tbody td {
+        padding: 8px;
+    }
+}
+
+/* ============================================
+   PÁGINA DE EDICIÓN
+   ============================================ */
+.form-editar {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-editar .caja {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 6px 25px rgba(16, 52, 88, 0.08);
+    border: 1px solid #e1e8f0;
+}
+
+.form-editar h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #103458;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #e1e8f0;
+    text-align: center;
+}
+
+.form-editar h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #46A2FD;
+    margin: 30px 0 15px;
+    padding-left: 10px;
+    border-left: 4px solid #46A2FD;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-editar .mb-3 {
+    margin-bottom: 18px;
+}
+
+.form-editar .form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #46A2FD;
+    margin-bottom: 6px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-editar .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+.form-editar .form-control:focus {
+    border-color: #46A2FD;
+    box-shadow: 0 0 0 4px rgba(70, 162, 253, 0.15);
+}
+
+.form-editar .mascota-bloque {
+    border: 2px solid #e1e8f0;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+    background: #f8fafc;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-editar .mascota-bloque:hover {
+    border-color: #46A2FD;
+    box-shadow: 0 4px 18px rgba(70, 162, 253, 0.15);
+}
+
+.form-editar .mascota-bloque .btn-eliminar-mascota {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.form-editar .mascota-bloque .btn-eliminar-mascota:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.form-editar .acciones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px dashed #e1e8f0;
+}
+
+.form-editar .btn-actualizar {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #46A2FD 0%, #2f8ee8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(70, 162, 253, 0.4);
+    transition: transform 0.15s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.form-editar .btn-actualizar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(70, 162, 253, 0.6);
+}
+
+.form-editar .btn-cancelar {
+    padding: 14px 40px;
+    background: #64748b;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-editar .btn-cancelar:hover {
+    background: #475569;
+    color: #ffffff;
+}
+
+/* Botón para añadir mascota (usado en editar.php) */
+.btn-add-mascota {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 2px dashed #46A2FD;
+    color: #46A2FD;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
+    font-family: inherit;
+}
+
+.btn-add-mascota:hover {
+    background: #46A2FD;
+    color: #ffffff;
+    transform: scale(1.01);
+}
+
+.btn-add-mascota span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ============================================
+   PÁGINAS DE ERROR (404, 500, 403)
+   ============================================ */
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.error-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(16, 52, 88, 0.15);
+    border: 1px solid #e1e8f0;
+}
+
+.error-card h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    background: linear-gradient(135deg, #46A2FD, #2f8ee8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.error-card h2 {
+    color: #103458;
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.error-card p {
+    color: #64748b;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.error-card .btn-error {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, #46A2FD 0%, #2f8ee8 100%);
+    color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 15px rgba(70, 162, 253, 0.4);
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.error-card .btn-error:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(70, 162, 253, 0.6);
+    color: #ffffff;
+}
+
+/* ============================================
+   MINIATURA DE MASCOTA EN TABLA
+   ============================================ */
+.celda-mascota {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.miniatura-mascota {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e1e8f0;
+    flex-shrink: 0;
+    background: #f0f9ff;
+}
+
+.miniatura-sin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    border: 2px dashed #cbd5e1;
+}
+
+/* ============================================
+   FOTO EN FORMULARIO DE EDICIÓN
+   ============================================ */
+.foto-actual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.foto-miniatura {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #e1e8f0;
+    background: #f0f9ff;
+}
+
+.foto-sin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #94a3b8;
+    border: 2px dashed #cbd5e1;
+}
+
+.form-editar input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #46A2FD;
+    border-radius: 10px;
+    background: #f0f9ff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.form-editar input[type="file"]:hover {
+    background: #e0f2fe;
+}
+
+.form-editar input[type="file"]::file-selector-button {
+    padding: 8px 16px;
+    margin-right: 12px;
+    background: linear-gradient(135deg, #46A2FD 0%, #2f8ee8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+}
+
+.ayuda-foto {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* ============================================
+   OPTIMIZACIÓN DE TABLA CON MUCHAS COLUMNAS
+   ============================================ */
+#tabla_registros {
+    font-size: 0.82rem;
+}
+
+#tabla_registros thead th {
+    padding: 10px 6px;
+    font-size: 0.75rem;
+}
+
+#tabla_registros tbody td {
+    padding: 10px 6px;
+    font-size: 0.82rem;
+}
+
+/* Botones de acción compactos en una sola fila */
+#tabla_registros .btn-sm {
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Botones en línea */
+#tabla_registros td:last-child {
+    white-space: nowrap;
+}
+
+#tabla_registros td:last-child > a,
+#tabla_registros td:last-child > form {
+    display: inline-block;
+    margin: 2px 2px;
+    vertical-align: middle;
+}
+
+/* Miniatura más pequeña */
+.miniatura-mascota {
+    width: 34px;
+    height: 34px;
+}
+
+.celda-mascota {
+    gap: 6px;
+    font-size: 0.82rem;
+}
+
+/* ============================================
+   ACCIONES EN TABLA - FORZAR HORIZONTAL
+   ============================================ */
+#tabla_registros td:last-child {
+    white-space: nowrap;
+    width: 1px;
+}
+
+#tabla_registros td:last-child .acciones-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+#tabla_registros td:last-child .acciones-wrap > a,
+#tabla_registros td:last-child .acciones-wrap > form {
+    display: inline-block;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+#tabla_registros td:last-child .btn-sm {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+#tabla_registros {
+    font-size: 0.8rem;
+}
+
+#tabla_registros th,
+#tabla_registros td {
+    padding: 8px 5px;
+}
+
+/* ============================================
+   MÓDULO PQRS (admin)
+   ============================================ */
+.filtro-pqrs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid #e1e8f0;
+    color: #103458;
+    background: #ffffff;
+    transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+    background: #f0f9ff;
+}
+
+.filtro-btn.activo {
+    background: #46A2FD;
+    color: white;
+    border-color: #46A2FD;
+}
+
+.filtro-btn .badge {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-size: 0.75rem;
+}
+
+.filtro-btn.activo .badge {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.badge-tipo {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+.badge-queja { background: #ef4444; }
+.badge-reclamo { background: #f59e0b; }
+.badge-sugerencia { background: #46A2FD; }
+.badge-felicitacion { background: #10b981; }
+
+.badge-estado {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.estado-pendiente { background: #fee2e2; color: #991b1b; }
+.estado-en_revision { background: #fef3c7; color: #92400e; }
+.estado-resuelto { background: #d1fae5; color: #065f46; }
+
+.pqrs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pqrs-detalle {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.pqrs-detalle .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 25px rgba(16, 52, 88, 0.08);
+    border: 1px solid #e1e8f0;
+}
+
+.pqrs-detalle h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #103458;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #e1e8f0;
+}
+
+.pqrs-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.pqrs-meta-item label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #46A2FD;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.pqrs-meta-item span {
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.pqrs-mensaje {
+    background: #f8fafc;
+    border-left: 4px solid #46A2FD;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    color: #1e293b;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+.pqrs-respuesta-existente {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    color: #1e293b;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* Formularios y textareas en PQRS */
+.pqrs-detalle textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.pqrs-detalle textarea:focus {
+    border-color: #46A2FD;
+    box-shadow: 0 0 0 4px rgba(70, 162, 253, 0.15);
+}
+
+.pqrs-detalle select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.pqrs-detalle select:focus {
+    border-color: #46A2FD;
+    box-shadow: 0 0 0 4px rgba(70, 162, 253, 0.15);
+}
+
+/* ============================================
+   SECCIÓN DE VACUNAS EN EDICIÓN ADMIN
+   ============================================ */
+.campo-vacunas-admin {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 18px;
+}
+
+.label-vacunas-admin {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #46A2FD;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.vacunas-nuevas-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.vacuna-item-admin {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 10px;
+    align-items: end;
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.campo-vacuna-admin {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-vacuna-admin label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+}
+
+.campo-vacuna-admin input {
+    padding: 8px 10px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.campo-vacuna-admin input:focus {
+    border-color: #46A2FD;
+    box-shadow: 0 0 0 3px rgba(70, 162, 253, 0.15);
+}
+
+.btn-add-vacuna-admin {
+    display: inline-block;
+    padding: 8px 16px;
+    background: transparent;
+    border: 2px dashed #46A2FD;
+    color: #46A2FD;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 5px;
+}
+
+.btn-add-vacuna-admin:hover {
+    background: #46A2FD;
+    color: white;
+}
+
+.btn-quitar-vacuna-admin {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    align-self: end;
+    margin-bottom: 3px;
+}
+
+.btn-quitar-vacuna-admin:hover {
+    background: #fecaca;
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .vacuna-item-admin {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   VISITAS AL VETERINARIO EN ADMIN
+   ============================================ */
+.visita-item-admin {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr auto;
+    gap: 10px;
+    align-items: end;
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+    .visita-item-admin {
+        grid-template-columns: 1fr;
+    }
+}

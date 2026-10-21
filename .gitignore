@@ -1,0 +1,18 @@
+# Archivos de entorno y secretos
+.env
+
+# Dependencias de Composer (se instalan con composer install)
+/vendor/
+
+# Archivos temporales y caché
+.phpunit.cache/
+storage/cache/views/*.html
+storage/logs/*
+storage/uploads/mascotas/*
+storage/uploads/usuarios/*
+!storage/uploads/mascotas/.gitkeep
+!storage/uploads/usuarios/.gitkeep
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    font-family: 'Roboto', sans-serif;
+}
+
+#contenedor-mascotas {
+    margin-top: 5%;
+    position: relative;
+}
+
+#contenedor-mascotas img {
+    width: 100%;
+    height: 50%;
+}
+
+/*Formulario*/
+
+.mascota  {
+    width: 100%;
+    padding: 15px 20px;
+    background: #ffffff;
+    position: relative;
+    border-radius: 20px;
+}
+
+
+
+    #contenedor-mascotas input{
+        cursor: pointer;
+        width: 50%;
+        margin-top: 10px;
+        padding: 20px;
+        border: none;
+        background: #F2F2F2;
+        font-size: 25px;
+        outline: thick double black;
+        border-radius: 20px;
+    }
+
+    #contenedor-mascotas h2 {
+        font-size: 30px;
+    }
+
+    .mascota h2 {
+        font-size: 30px;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+
+    .mascota button {
+        cursor: pointer;
+        margin-top: 10px;
+        outline: none;
+        display: block;
+        width: 50%;
+        color: rgb(15, 14, 14);
+        text-decoration: none;
+        padding: 22px;
+        border: 3px solid black;
+        background: rgba(51, 51, 51, 0.3);
+        font-size: 30px;
+        border-radius: 20px;
+    }
+
+    .mascota2  {
+        width: 100%;
+        padding: 15px 20px;
+        background: #ffffff;
+        position: relative;
+        border-radius: 0px;
+    }
+
+    .mascota2 h2 {
+        font-size: 30px;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+
+    #btn_mascota, button {
+        cursor: pointer;
+        margin-top: 15px;
+        outline: none;
+        display: block;
+        width: 50%;
+        color: rgb(15, 14, 14);
+        text-decoration: none;
+        padding: 22px;
+        border: 3px solid black;
+        background: rgba(51, 51, 51, 0.3);
+        font-size: 30px;
+        border-radius: 20px;
+    }
+
+    .cerrar-sesion {
+        cursor: pointer;          /* Cambia el cursor a una mano cuando pasas sobre el elemento */
+        margin-top: 15px;         /* Añade un margen superior de 15px para separar el botón de otros elementos */
+        margin: 0 auto;           /* Centra el elemento horizontalmente dentro de su contenedor */
+        outline: none;            /* Elimina el borde de enfoque alrededor del elemento al hacer clic en él */
+        display: block;           /* Convierte el enlace en un elemento de bloque, ocupando todo el ancho disponible */
+        width: 15%;               /* Establece el ancho del elemento al 15% del contenedor */
+        color: rgb(6, 12, 94);    /* Define el color del texto en un tono azul oscuro */
+        font-weight: bold;        /* Pone el texto en negrita */
+        padding: 3px;            /* Agrega 10px de espacio interno alrededor del texto dentro del elemento */
+        text-align: center;       /* Centra el texto dentro del elemento */
+        font-size: 1.6em;         /* Ajusta el tamaño de la letra a un 160% del tamaño de la fuente base */
+        line-height: 1.5;         /* Ajusta el espacio vertical entre las líneas de texto a 1.5 veces el tamaño de la fuente */
+        text-decoration: underline;  /*Subrayar el texto*/
+        text-decoration-color: rgb(6, 12, 94); /* Color del subrayado */
+        transition: color 0.3s ease, text-decoration-color 0.3s ease;
+    }
+    .cerrar-sesion:hover {
+        color: rgb(114, 111, 111); /* Cambia el color del texto a un tono "apagado" */
+        text-decoration-color: rgb(121, 120, 120); /* Cambia el color del subrayado */
+    }
+    
+    
+  

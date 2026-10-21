@@ -1,0 +1,54 @@
+# ============================================
+# Configuración de seguridad - PetTrack
+# ============================================
+
+# Deshabilitar el listado de directorios
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # H-02: Forzar HTTPS (Nota: Comenta esto si estás en local sin SSL)
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # ============================================
+    # SEGURIDAD: BLOQUEAR ACCESO A ARCHIVOS SENSIBLES
+    # ============================================
+    # 1. Bloquear archivos ocultos (.env, .git, etc.)
+    RewriteRule (^|/)\. - [F,L]
+    
+    # 2. Bloquear acceso a lógica y configuración
+    RewriteRule ^(app|config|tests|vendor|lib)/ - [F,L]
+    
+    # 3. Bloquear archivos de la raíz
+    RewriteRule ^(composer\.json|composer\.lock|phpunit\.xml|bootstrap\.php|CONTEXTO\.md) - [F,L]
+
+    # ============================================
+    # MVC: FRONT CONTROLLER
+    # ============================================
+    # Si la URL corresponde a un archivo real → servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Si la URL corresponde a un directorio real → servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Cualquier otra URL → va al front controller
+    RewriteRule ^(.*)$ public/index.php [L,QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+</IfModule>
+
+# H-12: Páginas de error personalizadas
+ErrorDocument 404 /LOGIN-REGISTER/404.php
+ErrorDocument 500 /LOGIN-REGISTER/500.php
+ErrorDocument 403 /LOGIN-REGISTER/403.php
